@@ -1,2 +1,1 @@
-ACO-
-====
+install with: "cabal install"
