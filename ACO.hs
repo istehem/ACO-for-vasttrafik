@@ -54,7 +54,7 @@ setup (Arguments from to  pathFile nodeFile n p) =
 printRes :: Graph gr => gr String Integer -> Path -> IO ()  
 printRes g path = do  
             mapM_ (uncurry $ printf "%-20s %-3i\n") $ reverse (pathToStrings path g) `zip` 
-                scanl1 (+) (0:reverse (pathTimes path g))
+                scanl (+) 0 (reverse $ pathTimes path g)
             printf "\ntotal length = %i\n" $ pathLength path g  
             putStrLn (replicate 80 '#')
 
